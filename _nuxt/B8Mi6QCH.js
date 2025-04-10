@@ -1,1 +1,0 @@
-import{j as e,c,i as t}from"./B70-j78q.js";const s={},n={class:"h-full flex flex-col justify-center items-center"};function o(r,f){return t(),c("div",n)}const _=e(s,[["render",o]]);export{_ as default};
