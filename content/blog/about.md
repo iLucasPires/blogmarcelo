@@ -1,8 +1,13 @@
 ---
-title: "Criando meu primeiro projeto com Django e Uvicorn"
-description: "Um guia simples e direto para começar um projeto Django rodando com Uvicorn, pronto para aplicações assíncronas."
+title: Criando meu primeiro projeto com Django e Uvicorn
+description: Um guia simples e direto para começar um projeto Django rodando com
+  Uvicorn, pronto para aplicações assíncronas.
 date: 2025-04-09
-tags: [django, uvicorn, python, backend]
+tags:
+  - django
+  - uvicorn
+  - python
+  - backend
 cover: /images/posts/django-uvicorn.png
 ---
 
@@ -43,7 +48,7 @@ O Django já vem com um arquivo `asgi.py` na pasta do projeto. Não precisei mex
 
 A estrutura ficou assim:
 
-```
+```text
 meu-projeto-django/
 ├── core/
 │   ├── asgi.py
