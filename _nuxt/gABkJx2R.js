@@ -1,0 +1,1 @@
+import{j as e,c,i as t}from"./9qpmhqf2.js";const s={},n={class:"h-full flex flex-col justify-center items-center"};function o(r,f){return t(),c("div",n)}const _=e(s,[["render",o]]);export{_ as default};
