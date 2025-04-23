@@ -10,6 +10,26 @@ const texts = [
   "Hang tight...",
   "Loading your content...",
   "Loading...",
+  "Loading...",
+  "Please wait...",
+  "Almost there...",
+  "Just a moment...",
+  "Hang tight...",
+  "Loading your content...",
+  "Loading...",
+  "Loading...",
+  "Please wait...",
+  "Almost there...",
+  "Just a moment...",
+  "Hang tight...",
+  "Loading your content...",
+  "Loading...",
+  "Loading your content...",
+  "Loading...",
+  "Loading...",
+  "Please wait...",
+  "Almost there...",
+  "Just a moment...",
 ];
 
 onMounted(() => {
@@ -26,6 +46,7 @@ onMounted(() => {
     if (index < texts.length) {
       displayedTexts.value.push(texts[index] ?? "");
       index++;
+    
     } else {
       clearInterval(interval);
     }
@@ -39,7 +60,8 @@ onMounted(() => {
       <div class="flex-1 flex flex-col-reverse overflow-ellipsis">
         <ul class="flex flex-col flex-1">
           <li v-for="item in displayedTexts" :key="item">
-            {{ item }}
+            <span>[ <span class="text-success-500">OK</span> ] </span>
+            <span class="text-neutral-500" v-text="item" />
           </li>
         </ul>
       </div>

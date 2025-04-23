@@ -18,7 +18,7 @@ const tabs = computed(() => {
   ];
 });
 
-const result = computed(() => {
+const posts = computed(() => {
   const search = q.value.toLowerCase();
 
   return data.value
@@ -29,46 +29,36 @@ const result = computed(() => {
 
 <template>
   <div class="flex flex-col gap-4">
-    <UCard
-      variant="subtle"
-      :ui="{
-        root: 'flex items-center gap-4',
-        body: 'flex items-center gap-4 sm:p-2 w-full',
-      }"
-    >
-      <UInput
-        v-model="q"
-        variant="outline"
-        placeholder="Search..."
-        class="flex-1"
-      />
-      <USelectMenu v-model="tab" variant="outline" :items="tabs" class="w-32" />
-    </UCard>
+    <div class="flex items-center gap-4">
+      <UInput v-model="q" placeholder="Search..." class="flex-1" />
+      <USelectMenu v-model="tab" :items="tabs" class="w-48" />
+    </div>
 
     <ul class="flex flex-col gap-4">
-      <li v-for="(item, index) in result" :key="index">
-        <NuxtLink :to="item.path">
-          <UCard variant="subtle">
-            <template #header>
-              <h2
-                v-text="item.title"
-                class="font-bold text-xl uppercase tracking-widest break-all"
-              />
-            </template>
-            <p>{{ item.description }}</p>
-            <template #footer>
-              <div class="flex gap-2">
-                <UBadge
-                  v-for="(tag, index) in item.tags"
-                  :key="index"
-                  :label="tag"
-                  variant="subtle"
-                />
-              </div>
-            </template>
-          </UCard>
-        </NuxtLink>
-      </li>
+      <UCard variant="soft"
+        as="li"
+        v-for="(post, index) in posts"
+        :key="index"
+        :ui="{
+          root: 'flex flex-col cursor-pointer hover:ring-2',
+          body: 'flex flex-col gap-4 w-full',
+        }"
+        @click="navigateTo(post.path)"
+      >
+        <h2
+          class="font-bold uppercase tracking-widest break-all"
+          v-text="post.title"
+        />
+        <p
+          class="text-sm text-neutral-500 text-pretty"
+          v-text="post.description"
+        />
+        <ul class="flex gap-2 w-full">
+          <li v-for="(tag, index) in post.tags" :key="index">
+            <UBadge :label="tag" />
+          </li>
+        </ul>
+      </UCard>
     </ul>
   </div>
 </template>
