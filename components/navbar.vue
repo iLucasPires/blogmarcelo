@@ -13,51 +13,77 @@ const isDark = computed({
 </script>
 
 <template>
-  <div class="flex justify-between items-center w-full">
-    <UCard variant="soft"
-      :ui="{
-        root: 'w-full h-full',
-        body: 'sm:p-0 sm:px-4 flex items-center justify-between',
-      }"
-    >
-      <UButton variant="ghost" color="neutral" icon="fa6-solid:frog" to="/" />
+  <div class="flex justify-between items-center w-full p-1">
+    <div class="flex items-center gap-2">
+      <UButton variant="ghost" label="Atividades" color="neutral" to="/" />
+      <UDropdownMenu
+        :items="[
+          { label: 'Home', to: '/', icon: 'i-lucide-house' },
+          { label: 'Blog', to: '/blog', icon: 'i-lucide-file-text' },
+        ]"
+      >
+        <UButton
+          variant="ghost"
+          color="neutral"
+          label="Menu"
+          trailing-icon="i-lucide-chevron-down"
+        />
+      </UDropdownMenu>
+    </div>
 
-      <UNavigationMenu
-        class="hidden lg:flex"
-        variant="link"
-        :items="menuItems"
-      />
-      <div class="flex items-center gap-2">
-        <ClientOnly v-if="!colorMode?.forced">
+    <div class="flex items-center gap-2">
+      <ClientOnly v-if="!colorMode?.forced">
+        <UPopover :ui="{ content: 'p-2 w-96 mt-2' }">
           <UButton
-            :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
+            label="Open"
             color="neutral"
             variant="ghost"
-            @click="isDark = !isDark"
-          />
+            class="flex items-center gap-2"
+          >
+            <UIcon size="16" name="i-lucide-sun-moon" />
+            <UIcon size="16" name="i-lucide-earth" />
+          </UButton>
+          <template #content>
+            <div class="grid gap-2 grid-cols-2">
+              <UButton
+                size="lg"
+                block
+                color="primary"
+                variant="solid"
+                :trailing-icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
+                :label="isDark ? 'Light' : 'Dark'"
+                @click="isDark = !isDark"
+              />
 
-          <template #fallback>
-            <div class="size-8" />
+              <UButton
+                size="lg"
+                block
+                color="primary"
+                variant="solid"
+                trailing-icon="i-lucide-languages"
+                label="Português"
+              />
+            </div>
           </template>
-        </ClientOnly>
-      </div>
+        </UPopover>
+      </ClientOnly>
+    </div>
 
-      <UDrawer class="lg:hidden" placement="left">
-        <UButton
-          label="Open"
-          color="neutral"
-          variant="ghost"
-          icon="lucide:menu"
+    <UDrawer class="lg:hidden" placement="left">
+      <UButton
+        label="Open"
+        color="neutral"
+        variant="ghost"
+        icon="lucide:menu"
+      />
+
+      <template #body>
+        <UNavigationMenu
+          orientation="vertical"
+          variant="link"
+          :items="menuItems"
         />
-
-        <template #body>
-          <UNavigationMenu
-            orientation="vertical"
-            variant="link"
-            :items="menuItems"
-          />
-        </template>
-      </UDrawer>
-    </UCard>
+      </template>
+    </UDrawer>
   </div>
 </template>

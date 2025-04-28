@@ -7,8 +7,16 @@ const { data } = await useAsyncData(route.path, () => {
     .all();
 });
 
-const q = ref("");
 const tab = ref("all");
+
+const q = ref("");
+const hasSearch = ref(false);
+const searchRef = useTemplateRef("search-ref");
+
+const handleSearch = () => {
+  hasSearch.value = true;
+  nextTick(() => searchRef.value?.inputRef?.focus());
+};
 
 const tabs = computed(() => {
   if (!data.value) return [];
@@ -28,20 +36,40 @@ const posts = computed(() => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
-    <div class="flex items-center gap-4">
-      <UInput v-model="q" placeholder="Search..." class="flex-1" />
+  <UCard
+    :ui="{
+      root: 'flex-1',
+      body: 'flex flex-col gap-4',
+      header: 'flex items-center gap-4 justify-between ',
+    }"
+  >
+    <template #header>
+      <div class="flex gap-2">
+        <UButton
+          variant="outline"
+          color="neutral"
+          icon="i-lucide-search"
+          @click="handleSearch"
+        />
+        <UInput
+          v-model="q"
+          v-if="hasSearch"
+          ref="search-ref"
+          @blur="hasSearch = q.length !== 0"
+        />
+      </div>
+      <h2 class="font-bold text-xl break-all">Posts</h2>
       <USelectMenu v-model="tab" :items="tabs" class="w-48" />
-    </div>
+    </template>
 
     <ul class="flex flex-col gap-4">
-      <UCard variant="soft"
+      <UCard
         as="li"
+        class="cursor-pointer hover:ring-2"
         v-for="(post, index) in posts"
         :key="index"
         :ui="{
-          root: 'flex flex-col cursor-pointer hover:ring-2',
-          body: 'flex flex-col gap-4 w-full',
+          body: 'space-y-2',
         }"
         @click="navigateTo(post.path)"
       >
@@ -54,11 +82,14 @@ const posts = computed(() => {
           v-text="post.description"
         />
         <ul class="flex gap-2 w-full">
-          <li v-for="(tag, index) in post.tags" :key="index">
-            <UBadge :label="tag" />
-          </li>
+          <UBadge
+            v-for="(tag, index) in post.tags"
+            as="li"
+            :key="index"
+            :label="tag"
+          />
         </ul>
       </UCard>
     </ul>
-  </div>
+  </UCard>
 </template>

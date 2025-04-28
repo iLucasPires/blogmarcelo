@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import "tailwindcss" theme(static);
+@import "tailwindcss";
 @import "@nuxt/ui";
-@plugin '@tailwindcss/typography';
 
+@plugin '@tailwindcss/typography';
 
 @theme {
     --color-neutral-50: #f6f6f6;
@@ -29,8 +29,7 @@
     --color-primary-900: var(--ui-color-primary-900);
     --color-primary-950: var(--ui-color-primary-950);
 
-    --ui-radius: var(--radius-xs);
-    --ui-bg: var(--color-neutral-50);
+
 }
 
 .dark {

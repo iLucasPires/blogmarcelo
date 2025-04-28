@@ -7,14 +7,36 @@ const { data: post } = await useAsyncData(`blog-${slug}`, () => {
 </script>
 
 <template>
-  <UCard variant="soft" class="flex flex-col gap-20">
-    <div class="flex flex-col gap-2">
+  <UCard
+    :ui="{
+      header: 'flex items-center gap-4 justify-between',
+      body: 'space-y-4',
+    }"
+  >
+    <template #header>
+      <div>
+        <UButton
+          variant="outline"
+          color="neutral"
+          icon="i-lucide-chevron-left"
+          @click="$router.go(-1)"
+        />
+      </div>
+
       <h2
-        class="font-bold text-3xl uppercase tracking-widest break-all"
-        v-text="post.title"
+        class="font-bold uppercase tracking-widest break-all"
+        v-text="post.path"
       />
-      <p class="text-sm" v-text="post.description" />
+
+      <div></div>
+    </template>
+
+    <div>
+      <h1 class="text-2xl font-bold uppercase tracking-widest break-all" v-text="post.title" />
+      <p class="text-sm text-neutral-500 text-pretty" v-text="post.description" />
+      
     </div>
-    <ContentRenderer :value="post" class="prose prose-invert" />
+
+    <ContentRenderer :value="post" class="prose dark:prose-invert" />
   </UCard>
 </template>
