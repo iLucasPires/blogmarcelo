@@ -7,13 +7,16 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "nuxi": "nuxi"
   },
   "dependencies": {
     "@nuxt/content": "^3.2.2",
     "@nuxt/image": "1.10.0",
     "@nuxt/ui": "^3.0.2",
     "@tailwindcss/typography": "^0.5.16",
-    "nuxt": "^3.16.1"
+    "better-sqlite3": "^12.2.0",
+    "date-fns": "^4.1.0",
+    "nuxt": "^4.0.0"
   }
 }
