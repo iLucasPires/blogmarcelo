@@ -2,10 +2,7 @@
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
-const menuItems = ref([
-  { label: "Home", to: "/" },
-  { label: "Blog", to: "/blog" },
-]);
+
 
 const colorMode = useColorMode();
 
@@ -30,39 +27,20 @@ const isDark = computed({
 </script>
 
 <template>
-  <div class="flex justify-between items-center w-full p-1">
+  <div class="flex justify-between items-center w-full px-4 h-8">
     <div class="flex items-center gap-2">
       <UButton
         variant="ghost"
-        label="Atividades"
         color="neutral"
         to="/"
-        class="font-black"
+        class="p-0 h-2 rounded-3xl w-12 bg-neutral-300"
       />
-      <UDropdownMenu
-        :ui="{
-          content: 'p-2 dark:bg-neutral-900  rounded-3xl',
-          item: 'rounded-4xl p-2',
-        }"
-        :items="[
-          { label: 'Home', to: '/', icon: 'i-lucide-house' },
-          { label: 'Blog', to: '/blog', icon: 'i-lucide-file-text' },
-        ]"
-      >
-        <UButton
-          variant="ghost"
-          color="neutral"
-          label="Menu"
-          class="font-black"
-          trailing-icon="i-lucide-chevron-down"
-        />
-      </UDropdownMenu>
     </div>
     <div
       class="absolute left-1/2 transform -translate-x-1/2 font-black text-sm"
       v-text="currentTime"
     />
-    <div class="flex items-center gap-2">
+    <!-- <div class="flex items-center gap-2">
       <ClientOnly v-if="!colorMode?.forced">
         <UPopover
           :ui="{
@@ -89,19 +67,10 @@ const isDark = computed({
                 :label="isDark ? 'Light' : 'Dark'"
                 @click="isDark = !isDark"
               />
-
-              <!-- <UButton
-                size="lg"
-                class="rounded-3xl"
-                color="primary"
-                variant="solid"
-                icon="i-lucide-languages"
-                label="Português"
-              /> -->
             </div>
           </template>
         </UPopover>
       </ClientOnly>
-    </div>
+    </div> -->
   </div>
 </template>
