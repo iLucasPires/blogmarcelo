@@ -3,37 +3,33 @@ const loading = ref(true);
 const displayedTexts = ref<string[]>([]);
 
 const texts = [
-  "Loading...",
-  "Please wait...",
-  "Almost there...",
-  "Just a moment...",
-  "Hang tight...",
-  "Loading your content...",
-  "Loading...",
-  "Loading...",
-  "Please wait...",
-  "Almost there...",
-  "Just a moment...",
-  "Hang tight...",
-  "Loading your content...",
-  "Loading...",
-  "Loading...",
-  "Please wait...",
-  "Almost there...",
-  "Just a moment...",
-  "Hang tight...",
-  "Loading your content...",
-  "Loading...",
-  "Loading your content...",
-  "Loading...",
-  "Loading...",
-  "Please wait...",
-  "Almost there...",
-  "Just a moment...",
+  "Initializing kernel...",
+  "Loading essential modules...",
+  "Mounting root filesystem: /dev/sda1",
+  "Checking file system integrity... OK",
+  "Starting udev daemon...",
+  "Detecting hardware...",
+  "> CPU: Intel(R) Core(TM) i7 detected",
+  "> Memory: 16 GB RAM",
+  "> GPU: NVIDIA GeForce GTX 1660",
+  "> Network Interface: eth0, wlan0",
+  "Applying system configurations...",
+  "Starting system services...",
+  "> sshd        [ OK ]",
+  "> cron        [ OK ]",
+  "> network     [ OK ]",
+  "> docker      [ OK ]",
+  "> cups        [FAILED]",
+  "> bluetooth   [ OK ]",
+  "Setting hostname: lucas-machine",
+  "Syncing system time with NTP server...",
+  "[INFO] Boot process completed successfully",
+  "Welcome to Meritissimo 1.0 (Kernel 6.4.12-lts)",
+  "Login:"
 ];
 
 onMounted(() => {
-  const MAX_TIME = 1500;
+  const MAX_TIME = 1000;
   const INTERVAL_TIME = MAX_TIME / texts.length;
 
   setTimeout(() => {
