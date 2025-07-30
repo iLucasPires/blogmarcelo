@@ -25,7 +25,7 @@ const texts = [
   "Syncing system time with NTP server...",
   "[INFO] Boot process completed successfully",
   "Welcome to Meritissimo 1.0 (Kernel 6.4.12-lts)",
-  "Login:"
+  "Login:",
 ];
 
 onMounted(() => {
@@ -42,7 +42,6 @@ onMounted(() => {
     if (index < texts.length) {
       displayedTexts.value.push(texts[index] ?? "");
       index++;
-    
     } else {
       clearInterval(interval);
     }

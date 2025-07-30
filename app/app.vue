@@ -1,20 +1,12 @@
 <template>
-  <Loading />
   <UApp>
-    <div class="h-screen flex flex-col pb-2 px-2">
-      <Navbar />
-      <div
-        class="flex-1 flex flex-col gap-10 p-10 rounded-lg overflow-y-auto"
-        style="
-          background: url('/images/background.png');
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-position: center;
-        "
-      >
+    <Loading />
+    <div class="h-screen flex flex-col bg-neutral-950">
+      <GnomeMenu />
+      <Background>
+        <GnomeDock />
         <NuxtPage />
-      </div>
+      </Background>
     </div>
   </UApp>
 </template>

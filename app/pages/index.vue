@@ -1,21 +1,26 @@
 <script setup lang="ts">
-const socials = [
+const socials = ref([
   {
-    name: "GitHub",
-    icon: "simple-icons:github",
-    url: "https://github.com/meritissimo1",
-  },
-  {
-    name: "Codeberg",
-    icon: "simple-icons:codeberg",
-    url: "https://codeberg.org/meritissimo1",
-  },
-  {
-    name: "intra 42",
+    label: "intra 42",
     icon: "simple-icons:42",
-    url: "https://profile-v3.intra.42.fr/users/marcrodr",
+    to: "https://profile-v3.intra.42.fr/users/marcrodr",
   },
-];
+  {
+    label: "GitHub",
+    icon: "simple-icons:github",
+    to: "https://github.com/meritissimo1",
+  },
+  {
+    label: "Codeberg",
+    icon: "simple-icons:codeberg",
+    to: "https://codeberg.org/meritissimo1",
+  },
+  {
+    label: "linux foundation",
+    icon: "simple-icons:linuxfoundation",
+    to: "https://mentorship.lfx.linuxfoundation.org/mentee/ad455e76-362d-481f-a5ed-f1c570f77ab6",
+  },
+]);
 </script>
 
 <template>
@@ -24,16 +29,16 @@ const socials = [
       v-for="(social, index) in socials"
       color="neutral"
       variant="ghost"
-      class="flex flex-col gap-4"
+      class="flex flex-col"
       target="_blank"
-      :to="social.url"
+      :to="social.to"
       :key="index"
+      :icon="social.icon"
+      :label="social.label"
       :ui="{
-        base: 'bg-neutral-950/10 hover:bg-neutral-950/40 text-white/90',
+        leadingIcon: 'size-12',
+        base: ' hover:bg-neutral-950/40 text-white/90 active:bg-neutral-950/50',
       }"
-    >
-      <UIcon class="" size="72" :name="social.icon" />
-      <h2 class="mt-auto text-white shadow-xl">{{ social.name }}</h2>
-    </UButton>
+    />
   </div>
 </template>
