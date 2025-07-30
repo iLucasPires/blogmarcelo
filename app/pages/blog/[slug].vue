@@ -32,7 +32,7 @@ const { data: post } = await useAsyncData(`blog-${slug}`, () => {
 
         <div></div>
       </template>
-      <ContentRenderer :value="post" class="prose max-w-5xl dark:prose-invert" />
+      <ContentRenderer :value="post" class="prose prose-zinc max-w-5xl dark:prose-invert" />
     </UCard>
   </div>
 </template>

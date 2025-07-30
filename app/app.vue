@@ -1,7 +1,7 @@
 <template>
   <UApp>
     <Loading />
-    <div class="h-screen flex flex-col bg-neutral-950">
+    <div class="h-screen flex flex-col bg-black">
       <GnomeMenu />
       <Background>
         <GnomeDock />
