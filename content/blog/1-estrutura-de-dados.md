@@ -1,6 +1,6 @@
-# #1 Estrutura de Dados  – Complexidade de Algoritmos
+# #1 Estrutura de Dados – Complexidade de Algoritmos
 
-Já faz um tempo que não escrevo sobre esse assunto mas, antes tarde do que nunca 🤝
+Já faz um tempo que não escrevo sobre esse assunto mas, antes tarde do que nunca.
 
 Continuando da onde eu parei ([Estrutura de Dados #0](https://www.tabnews.com.br/meritissimo1/estrutura-de-dados-0)), hoje eu quero falar sobre **Complexidade de Algoritmos** e por que você deveria pensar duas vezes antes de colocar um `while`/`for` dentro do outro.
 
@@ -39,7 +39,7 @@ Existem outras notações para melhor caso e caso médio, mas vamos ver aqui **s
 * `O(n²)` → No pior caso teremos `n²` instruções e o crescimento é exponencial.
 * `O(log(n))` → No pior caso teremos `log₂(n) = x`, onde `x` é o número de instruções.
 
-📈 Ilustração do crescimento:
+Ilustração do crescimento:
 
 ![Big O Notation](https://adrianmejia.com/images/time-complexity-examples.png "Big O Notation")
 
@@ -64,7 +64,7 @@ Para entender a complexidade de um algoritmo, precisamos entender **o que ele fa
 > Para cada elemento, busca-se a posição correta no vetor.
 > Ou seja, **para cada N elementos temos que percorrer N posições**.
 
-🔁 Logo, sua complexidade é:
+Logo, sua complexidade é:
 **`O(n²)`**
 
 ---
@@ -74,7 +74,7 @@ Para entender a complexidade de um algoritmo, precisamos entender **o que ele fa
 > Para cada posição, busca-se o elemento correto no vetor.
 > Ou seja, **para cada N posições temos que percorrer N elementos**.
 
-🔁 Logo, sua complexidade é:
+Logo, sua complexidade é:
 **`O(n²)`**
 
 ---
@@ -84,7 +84,7 @@ Para entender a complexidade de um algoritmo, precisamos entender **o que ele fa
 > Para cada par de elementos, busca-se a posição correta relativa no vetor.
 > Ou seja, **para cada N pares de elementos temos que percorrer N posições**.
 
-🔁 Logo, sua complexidade é:
+Logo, sua complexidade é:
 **`O(n²)`**
 
 ---
@@ -95,12 +95,12 @@ Inclusive, **recomendo fortemente** vocês implementarem esses algoritmos até p
 
 > Exercitem essa dica de **resumir o algoritmo em poucas palavras**, já deixando clara a complexidade.
 
-Se quiserem, **respondam aqui como fizeram 😁**
+Se quiserem, **respondam aqui como fizeram**.
 
 ---
 
 ## Materiais adicionais
 
-* 📹 [Insertion Sort 💃](https://youtu.be/EdIKIf9mHk0)
-* 📹 [Selection Sort 💃](https://youtu.be/0-W8OEwLebQ)
-* 📹 [Bubble Sort 💃](https://www.youtube.com/watch?v=lyZQPjUT5B4)
+* [Insertion Sort](https://youtu.be/EdIKIf9mHk0)
+* [Selection Sort](https://youtu.be/0-W8OEwLebQ)
+* [Bubble Sort](https://www.youtube.com/watch?v=lyZQPjUT5B4)

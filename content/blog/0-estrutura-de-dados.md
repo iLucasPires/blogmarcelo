@@ -8,8 +8,8 @@ Por isso é essencial estudar ambos em conjunto.
 As estruturas de dados servem basicamente para representar dados que abstraímos de situações ou objetos do mundo real que estamos interessados em processar.
 Isso pode ser exemplificado com numeral e número:
 
-- **Numeral** é um símbolo que representa a quantidade **número**.
-- Quantidade é algo abstrato, algo que não conseguimos representar bem.
+* **Numeral** é um símbolo que representa a quantidade **número**.
+* Quantidade é algo abstrato, algo que não conseguimos representar bem.
   Portanto usamos símbolos para representar isso.
 
 Exemplo: a quantidade cinco pode ser representada de diversas formas como `5`, `V` e até mesmo `"cinco"` ou `"five"`.
@@ -21,7 +21,7 @@ Da mesma forma que nós convencionalmente usamos a **base decimal**, para o comp
 
 Caso você não tenha familiaridade com operações em binário, recomendo ver qualquer vídeo no YouTube que já ajuda.
 Mas antes, veja esse pra entender o **porquê** se usa o sistema binário nas máquinas:
-🔗 [Why Binary](https://www.youtube.com/watch?v=thrx3SBEpL8)
+[Why Binary](https://www.youtube.com/watch?v=thrx3SBEpL8)
 
 ---
 
@@ -36,18 +36,18 @@ A teoria de conjuntos nos permite manipular qualquer tipo de elemento, e como a 
 
 Alguns deles são:
 
-- Conjunto dos naturais
-- Conjunto dos inteiros
-- Conjunto dos reais
-- Conjunto dos complexos
+* Conjunto dos naturais
+* Conjunto dos inteiros
+* Conjunto dos reais
+* Conjunto dos complexos
   ... e por aí vai.
 
 O que é importante pra nós aqui são os **atributos** que diferenciam os elementos de cada conjunto.
 Por exemplo:
 
-- No conjunto dos naturais precisamos somente do **atributo valor** (`5`)
-- No conjunto dos inteiros precisamos do **atributo valor + sinal** (`-5`)
-- Nos reais: **valor da parte inteira + sinal + valor da parte fracionária** (`4.237`)
+* No conjunto dos naturais precisamos somente do **atributo valor** (`5`)
+* No conjunto dos inteiros precisamos do **atributo valor + sinal** (`-5`)
+* Nos reais: **valor da parte inteira + sinal + valor da parte fracionária** (`4.237`)
 
 Ou seja, **cada tipo de conjunto possui elementos com atributos diferentes**.
 
@@ -65,8 +65,8 @@ Nesse ponto podemos chegar à conclusão de que:
 
 Assim, com as estruturas e os algoritmos, podemos dizer que um **tipo de dado** é definido por:
 
-- Um conjunto de estrutura de dados
-- E os algoritmos associados a elas
+* Um conjunto de estrutura de dados
+* E os algoritmos associados a elas
 
 Bem parecido com os conjuntos numéricos que vimos antes.
 A diferença é que os conjuntos numéricos são **infinitos e precisos**, duas limitações bem conhecidas em um computador.
@@ -79,8 +79,8 @@ Vamos usar a linguagem C e entender seus tipos de dados com essa explicação:
 
 Um `int` é um tipo de dado, pois:
 
-- Possui atributos que definem o que é um int
-- Possui algoritmos que o manipulam, como `soma++`, `subtração--`, `restoDaDivisao%`
+* Possui atributos que definem o que é um int
+* Possui algoritmos que o manipulam, como `soma++`, `subtração--`, `restoDaDivisao%`
 
 ```c
 c = a + b;
@@ -88,8 +88,8 @@ c = a + b;
 
 Imaginando que `a`, `b` e `c` são `int`, podemos dizer que:
 
-- `a`, `b` e `c` são estruturas de dados do tipo **inteiro**
-- O `+` é o algoritmo que as manipula
+* `a`, `b` e `c` são estruturas de dados do tipo **inteiro**
+* O `+` é o algoritmo que as manipula
 
 ---
 
@@ -98,17 +98,17 @@ Imaginando que `a`, `b` e `c` são `int`, podemos dizer que:
 Um tipo primitivo de dado sempre está associado a uma linguagem de programação.
 Cada linguagem possui nativamente alguns tipos, por exemplo:
 
-- Em C: `int`, `float`, `char`, `bool`...
+* Em C: `int`, `float`, `char`, `bool`...
 
 Duas linguagens podem até ter tipos primitivos iguais, mas **isso não é regra**.
 Cada linguagem possui seus tipos primitivos baseado em **um problema que ela quer resolver**, seja:
 
-- Ensino de programação
-- Cálculos científicos
-- Processamento algébrico
-- Gerência de banco de dados
-- Processamento de matrizes
-- Desenho vetorial
+* Ensino de programação
+* Cálculos científicos
+* Processamento algébrico
+* Gerência de banco de dados
+* Processamento de matrizes
+* Desenho vetorial
   ...e por aí vai.
 
 O criador da linguagem define o que será incluído para facilitar o trabalho da sua área de foco.
@@ -119,7 +119,7 @@ Ou seja, **você precisa desenvolver novos tipos de dados**.
 
 ---
 
-> _Caso queiram, eu recomendo pesquisarem por diferentes tipos primitivos nas linguagens e tentarem chegar a uma conclusão do porquê da existência de cada tipo na linguagem._
+> *Caso queiram, eu recomendo pesquisarem por diferentes tipos primitivos nas linguagens e tentarem chegar a uma conclusão do porquê da existência de cada tipo na linguagem.*
 
 ---
 
@@ -144,13 +144,13 @@ Vamos representar o número `7` com 5 bits:
 00111
 ```
 
-- 4 bits para o valor
-- 1 bit para o sinal (o bit mais à esquerda, chamado **MSB**)
+* 4 bits para o valor
+* 1 bit para o sinal (o bit mais à esquerda, chamado **MSB**)
 
 Logo:
 
-- `00111` = +7 (bit do sinal é 0)
-- `10111` = ❌ errado! (flipar só o bit do sinal não funciona)
+* `00111` = +7 (bit do sinal é 0)
+* `10111` = errado! (flipar só o bit do sinal não funciona)
 
 ---
 
@@ -160,13 +160,13 @@ A ideia: flipar **todos os bits** de um número positivo para representar o nega
 
 Exemplo:
 
-- `+7` = `00111`
-- Complemento de 1 → `11000` → representa `-7`
+* `+7` = `00111`
+* Complemento de 1 → `11000` → representa `-7`
 
 Mas esse método tem um problema: o **zero**.
 
-- `+0` → `00000`
-- `-0` → `11111`
+* `+0` → `00000`
+* `-0` → `11111`
   Ou seja, **duas representações para o 0**, o que é ruim para comparações.
 
 ---
@@ -180,33 +180,33 @@ Para resolver o problema do zero:
 
 Exemplo com `7`:
 
-- `00111` → complemento de 1 → `11000`
-- `11000` + 1 → `11001` → `-7`
+* `00111` → complemento de 1 → `11000`
+* `11000` + 1 → `11001` → `-7`
 
 Verificando com `0`:
 
-- `00000` → complemento de 1 → `11111` → `11111 + 1 = 100000`
-  (ignora o _carry_ do MSB → resultado final: `00000`)
+* `00000` → complemento de 1 → `11111` → `11111 + 1 = 100000`
+  (ignora o *carry* do MSB → resultado final: `00000`)
 
-✅ Agora temos apenas uma representação para o `0`.
+Agora temos apenas uma representação para o `0`.
 O **complemento de 2** é eficiente para representar inteiros com sinal.
 
 ---
 
-Para os demais tipos, eu deixo pra vocês pesquisarem 😉
+Para os demais tipos, eu deixo pra vocês pesquisarem.
 
 ---
 
 # Links para referência
 
-- 🔢 Float: [Padrão IEEE 754](https://0.30000000000000004.com/)
-- 🔤 String: [Tabela ASCII, EBCDIC, Unicode](https://www-user.tu-chemnitz.de/~heha/petzold/ch02b.htm)
-- ➗ Complemento de 2: [Two's Complement (YouTube)](https://youtu.be/lKTsv6iVxV4)
-- 📰 Notícia da Flávia Carvalho: [Uncle Bob no Tabnews](https://www.tabnews.com.br/FlaviaCarvalho/conselho-do-uncle-bob-contrate-programadores-que-nao-dependem-de-linguagens)
+* Float: [Padrão IEEE 754](https://0.30000000000000004.com/)
+* String: [Tabela ASCII, EBCDIC, Unicode](https://www-user.tu-chemnitz.de/~heha/petzold/ch02b.htm)
+* Complemento de 2: [Two's Complement (YouTube)](https://youtu.be/lKTsv6iVxV4)
+* Notícia da Flávia Carvalho: [Uncle Bob no Tabnews](https://www.tabnews.com.br/FlaviaCarvalho/conselho-do-uncle-bob-contrate-programadores-que-nao-dependem-de-linguagens)
 
 ---
 
-Espero que não tenha ficado muito denso 😄
+Espero que não tenha ficado muito denso.
 Caso tenham alguma observação a fazer, deixe aqui nos comentários!
 **Vamo que vamo, turma!**
 
