@@ -1,12 +1,12 @@
 <template>
   <UApp>
-    <Loading />
+    <DesktopLoading />
     <div class="h-screen flex flex-col bg-black">
-      <GnomeMenu />
-      <Background>
-        <GnomeDock />
+      <DesktopMenu />
+      <DesktopBackground>
+        <DesktopDock />
         <NuxtPage />
-      </Background>
+      </DesktopBackground>
     </div>
   </UApp>
 </template>
