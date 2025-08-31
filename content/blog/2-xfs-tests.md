@@ -213,3 +213,6 @@ With everything configured, you can now run the tests to validate your changes.
    ```bash
    ./check xfs/001
    ```
+
+
+*Licensed under CC-BY-SA 4.0*
