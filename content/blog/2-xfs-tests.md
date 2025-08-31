@@ -1,4 +1,4 @@
-# #3 XFS Tests
+# #2 XFS Tests
 
 Hello, in this tutorial, I'll show you how to run xfstests on a custom kernel. I needed to do this because I made a change to the fs subsystem and needed to understand how to run the tests after that change. Since it was a difficult task, I decided to repeat it a few times to understand how to do it and be able to teach you step by step. Also, I'd like to remind everyone not to make the same mistake I did by not properly testing a change made to the kernel. Don't just test build and boot. 
 
@@ -23,14 +23,14 @@ When compiling your kernel, you can choose exactly which features it will suppor
 
    Inside **`menuconfig`**, you need to ensure some key variables are set. You can use the search function by pressing `/` and typing the variable name, and then by pressing `1` on your keyboard, you will navigate to the variable.. Make sure each of these is enabled with `Y` (built directly into the kernel, not as a module).
 
-   * `CONFIG_XFS_FS`
-   * `CONFIG_E1000E`
-   * `CONFIG_VIRTIO_NET`
-   * `CONFIG_VIRTIO_PCI`
-   * `CONFIG_NET_FAILOVER`
-   * `CONFIG_E1000`
+* `CONFIG_XFS_FS`
+* `CONFIG_E1000E`
+* `CONFIG_VIRTIO_NET`
+* `CONFIG_VIRTIO_PCI`
+* `CONFIG_NET_FAILOVER`
+* `CONFIG_E1000`
 
-   After saving the configuration, compile the kernel and headers. We gonna installs the kernel header files to a temporary directory. These headers are needed to compile the xfstests tool inside the VM.
+After saving the configuration, compile the kernel and headers. We gonna installs the kernel header files to a temporary directory. These headers are needed to compile the xfstests tool inside the VM.
 
    ```bash
    make -j$(nproc)
