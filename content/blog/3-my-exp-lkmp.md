@@ -29,7 +29,7 @@ In addition to these three patches, I also made two others that involve a modern
     
 -   **Don't be afraid of maintainer reviews**, some can be very direct, but always take them as a learning experience.
     
--   **Have fun!** contribute because you want to, not because it's an obligation.
+-   **Have fun!** contribute because you want to, not because it's a task on the board.
 
 ##
 *Licensed under CC BY-NC-SA 4.0*
